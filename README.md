@@ -15,3 +15,14 @@
 # Getting Started
 
 ### Installing
+
+
+## Authors
+
+* **Ecclesia Morain** 
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
