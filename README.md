@@ -8,7 +8,7 @@
 - [Heroku](http://heroku.com) for deployment
 
 #### Planning: 
-Vectr, lucidchart
+[Vectr](http://vectr.com) - for wireframing.
 
 #### Project Management: 
 [Trello](https://trello.com/b/rl9a7dbe/shopping-website-wdi-project-3)
