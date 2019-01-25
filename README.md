@@ -6,9 +6,7 @@
 - [Mongoose and MongoDB](https://mongoosejs.com/) - Database management
 - [React.js](https://reactjs.org/) - Client/ Front-end management.
 - [Heroku](http://heroku.com) for deployment
-
-#### Planning: 
-[Vectr](http://vectr.com) - for wireframing.
+- [Vectr](http://vectr.com) - for wireframing and pre-planning.
 
 #### Project Management: 
 [Trello](https://trello.com/b/rl9a7dbe/shopping-website-wdi-project-3)
