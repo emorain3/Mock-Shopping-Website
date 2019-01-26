@@ -11,6 +11,13 @@
 #### Project Management: 
 [Trello](https://trello.com/b/rl9a7dbe/shopping-website-wdi-project-3)
 
+### Wireframes: 
+![Landing Page Wireframe](/wireframes/shop_homepage.png)
+![Shopping Page Wireframe](/wireframes/shopping_page.png)
+![Shopping Page Wireframe](/wireframes/item_page_ALT.png)
+
+### Entity Relationship Diagram 
+![ERD](/wireframes/item_page_ALT.png)
 
 # Getting Started
 
