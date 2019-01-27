@@ -9,6 +9,7 @@ let LandingPage = styled.div`
     background-color: black;
     text-align: center;
     margin: 0;
+    height: 110vh;
 `
 
 
