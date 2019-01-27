@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import LocationsPage from './components/LocationsPage';
 import styled from 'styled-components';
@@ -17,7 +18,9 @@ class App extends Component {
   render() {
     return (
       <LandingPage>
-        <LocationsPage/>
+        <Router>
+          <Route exact path="/" component={LocationsPage} />
+        </Router>
       </LandingPage>
     );
   }
