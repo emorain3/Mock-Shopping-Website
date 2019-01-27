@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import asian_location from '../images/asian_location.jpeg';
-import american_location from '../images/america_location.jpeg';
-import south_american_location from '../images/south-america_location.jpeg';
 
+import styled from 'styled-components';
+
+
+let ImageShape = styled.div`
+    border: solid black 20px;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    width: 30vw;
+    // margin: 0;
+`
 
 class DiagonalImage extends Component {
     render() {
         return (
-            <div>
-                <img src={asian_location} alt="one of our worldwide locations" />
-            </div>
+            <ImageShape>
+                <img src={this.props.image} alt="one of our worldwide locations" />
+            </ImageShape>
         );
     }
 }

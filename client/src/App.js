@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import DiagonalImage from './components/DiagonalImage';
+import LocationsPage from './components/LocationsPage';
+import styled from 'styled-components';
+
+
+
+let LandingPage = styled.div`
+    background-color: black;
+    text-align: center;
+    margin: 0;
+`
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <DiagonalImage/>
-      </div>
+      <LandingPage>
+        <LocationsPage/>
+      </LandingPage>
     );
   }
 }
