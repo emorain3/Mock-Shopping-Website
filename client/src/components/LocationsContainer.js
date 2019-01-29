@@ -27,15 +27,15 @@ class LocationsContainer extends Component {
                 <ImageContainer>
                     {/* <Link render={AmericanLocationComponent}/> */}
                     <Link to={"/america"} > 
-                        <DiagonalImage distance={-45} locationName="American" image={american_location}/> 
+                        <DiagonalImage distance={-30} locationName="American" image={american_location}/> 
                     </Link>
 
                     <Link to={"/brazil"}> 
-                        <DiagonalImage distance={-15} locationName="Brazil" image={brazil_location}/>
+                        <DiagonalImage distance={0} locationName="Brazil" image={brazil_location}/>
                     </Link> 
 
                     <Link to={"/korea"} > 
-                        <DiagonalImage distance={15} locationName="Korean" image={asian_location}/>
+                        <DiagonalImage distance={30} locationName="Korean" image={asian_location}/>
                     </Link> 
 
                 </ImageContainer>
