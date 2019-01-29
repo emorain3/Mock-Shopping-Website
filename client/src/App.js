@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
-import LocationsPage from './components/LocationsPage';
+import LocationsContainer from './components/LocationsContainer';
 import styled from 'styled-components';
 
 
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <LandingPage>
         <Router>
-          <Route exact path="/" component={LocationsPage} />
+          <Route exact path="/" component={LocationsContainer} />
         </Router>
       </LandingPage>
     );
