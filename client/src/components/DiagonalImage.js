@@ -19,15 +19,15 @@ let locationImageTransition = (distance) => keyframes`
 let LocationLinkContainer = styled.div`
     position: relative;
     z-index: 5;
-    bottom: 25vh;
-    left: 2vw;
+    bottom: 15vh;
+    left: 4vw;
 `
     
 let LocationLink = styled.h1`
     font-size: 3rem;
     text-direction: center;
     font-family: 'Titillium Web', sans-serif;
-    color: khaki;
+    color: pink;
 
     width: 20vw;
     
@@ -42,6 +42,7 @@ let ImageShape = styled.div`
     position: absolute;
     width: 30vw;
     height: 90vh;
+    margin-top: 5vh;
 
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
