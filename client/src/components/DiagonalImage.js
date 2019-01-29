@@ -13,7 +13,7 @@ let locationImageTransition = (distance) => keyframes`
         margin-left: ${distance + 'vw'};
         opacity: .8;
     }
-    `
+`
     
 ////////////// STYLING
 let LocationLinkContainer = styled.div`

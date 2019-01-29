@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
-import LocationsContainer from './components/LocationsContainer';
 import styled from 'styled-components';
 
+import LocationImagesContainer from './components/LocationImagesContainer';
+import HomePage from './components/HomePage'
 
 
-let LandingPage = styled.div`
-    background-color: black;
-    text-align: center;
-    margin: 0;
-    height: 110vh;
-`
+
 
 
 class App extends Component {
   render() {
     return (
-      <LandingPage>
+      <div>
         <Router>
-          <Route exact path="/" component={LocationsContainer} />
+          <Switch>
+            <Route exact path="/" component={LocationImagesContainer} />
+            <Route exact path="/america" component={HomePage} />
+          </Switch>
+
         </Router>
-      </LandingPage>
+      </div>
     );
   }
 }
