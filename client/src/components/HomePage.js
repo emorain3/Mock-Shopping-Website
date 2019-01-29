@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import NavBar from './NavBar'
-import cover_image_1 from '../images/cover_image_1.jpg';
+import cover_image_love from '../images/cover_image_love.jpg';
+import cover_image_sunny_blackgirl from '../images/cover_image_sunny_blackgirl.jpg';
+import cover_image_two_girls from '../images/cover_image_two_girls.jpg';
+import cover_image_coat from '../images/cover_image_coat.jpg';
+import cover_image_bw from '../images/cover_image_bw.jpg';
+import cover_image_blackgirl_bus from '../images/cover_image_blackgirl_bus.jpg';
 
 
 
@@ -27,8 +32,8 @@ let HoverTagContainer = styled.div`
 
     font-size: 4rem;
 
-    background-color: lightpink;
-    opacity: .8;
+    background-color: grey;
+    opacity: .2;
 `
 let HoverTagHeader = styled.div`
     position: absolute;
@@ -70,7 +75,7 @@ class HomePage extends Component {
                 <NavBar/>
                 
                 <CoverImageShape>
-                    <img src={cover_image_1} alt="cover image 1" />
+                    <img src={cover_image_two_girls} alt="cover image 1" />
                 </CoverImageShape>
 
                 <HoverTagContainer> </HoverTagContainer>
