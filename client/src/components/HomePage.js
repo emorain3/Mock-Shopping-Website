@@ -8,7 +8,9 @@ import cover_image_two_girls from '../images/cover_image_two_girls.jpg';
 // import cover_image_coat from '../images/cover_image_coat.jpg';
 // import cover_image_bw from '../images/cover_image_bw.jpg';
 // import cover_image_blackgirl_bus from '../images/cover_image_blackgirl_bus.jpg';
-import insta_1 from '../images/insta_1.jpg';
+import insta_1 from '../images/insta_asiangirl.jpg';
+import insta_2 from '../images/insta_blackgirl_1.jpg';
+import insta_3 from '../images/insta_3.jpg';
 import kiss from '../images/kiss_icon.png';
 
 
@@ -17,7 +19,7 @@ import ImageGrid from './ImageGrid'
 
 ////////////// STYLING
 let HomePageContainer = styled.div`
-    bacgound-color: ivory;
+    background-color: ivory;
 `
 
 let CoverImageShape = styled.div`
@@ -88,6 +90,9 @@ let KissIcon = styled.img`
 
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
 class HomePage extends Component {
+    state = {
+        images: [insta_1, insta_2, insta_3]
+    }
     render() {
         return (
             <HomePageContainer>
@@ -111,7 +116,11 @@ class HomePage extends Component {
                     <KissIcon src={kiss}/>
                 </HeaderContainer>
                 
-                <ImageGrid/>
+                <ImageGrid 
+                    grid_images={this.state.images} 
+                    side_margins={5} 
+                    top_margins={5} 
+                    img_height={30} />
 
             </HomePageContainer>
         );

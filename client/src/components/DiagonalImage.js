@@ -72,7 +72,7 @@ let ImageShape = styled.div`
 ////////////// COMPONENT DEFINITION
 class DiagonalImage extends Component {
     render() {
-        console.log("props for: " + this.props.locationName + " IS " + this.props.distance)
+        // console.log("props for: " + this.props.locationName + " IS " + this.props.distance)
         return (
             <ImageShape distance={this.props.distance}>
                 <img src={this.props.image} alt="one of our worldwide locations" />

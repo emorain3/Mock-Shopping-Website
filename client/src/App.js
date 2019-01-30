@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import LocationImagesContainer from './components/LocationImagesContainer';
 import HomePage from './components/HomePage'
+import ShoppingPage from './components/ShoppingPage'
 
 
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LocationImagesContainer} />
             <Route exact path="/america" component={HomePage} />
+            <Route exact path="/america/clothing/tshirts" component={ShoppingPage} />
           </Switch>
 
         </Router>
