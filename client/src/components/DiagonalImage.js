@@ -23,7 +23,7 @@ let LocationLinkContainer = styled.div`
 `
     
 let LocationLink = styled.h1`
-    font-size: 3rem;
+    font-size: 3vw;
     text-direction: center;
     font-family: 'Titillium Web', sans-serif;
     color: pink;

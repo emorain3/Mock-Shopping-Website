@@ -13,7 +13,7 @@ let ImageContainer = styled.div`
     justify-content: center;
     
     margin: 5vh 5vw;
-    background-color: khaki;
+    background-color: ivory;
 `
 let ImageStyled = styled.img`
     margin: 3vw 1.25vw;

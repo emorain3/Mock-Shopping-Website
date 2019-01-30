@@ -47,7 +47,7 @@ let HoverTagHeader = styled.div`
     left: 37vw;
 
     font-family: 'Dancing Script', cursive;
-    font-size: 5rem;
+    font-size: 4.5vw;
     color: black;
 
     text-shadow: 1px 1px 1px black;
@@ -62,7 +62,7 @@ let HoverTagline = styled.div`
     left: 30vw;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 7rem;
+    font-size: 6vw;
     color: maroon;
 
     text-shadow: 1px 1px 1px black;
