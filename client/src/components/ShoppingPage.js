@@ -33,12 +33,13 @@ let SideNavContainer = styled.div`
     width: 15vw;
 
     padding-left: 3vw;
-    padding-top: 3vw;
+    padding-top: 0vw;
 `
 let BannerImageShape = styled.img`
-    border-left: solid #222222 13vw;
+    border-left: solid #222222 15vw;
     border-right: solid #222222 15vw;
-    margin-left: 0vw;
+    border-top: solid #222222 3vw;
+    margin-left: -8vw;
     width: 80vw;
     // height: 70vh;
     grid-area: banner;
@@ -50,6 +51,14 @@ let ItemGridContainer = styled.div`
     width: 85vw;
     grid-area: imagegrid;
 `
+
+let PageText = styled.h1`   
+    margin-top: 2vw;
+    margin-bottom: -1vw;
+    margin-left: 2vw;
+    font-family: 'Titillium Web', sans-serif;
+`
+
 //                          Add shopping cart Icon !!!!!           <<<<--------------------------------
 
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
@@ -68,8 +77,8 @@ class ShoppingPage extends Component {
                         <div class=" uk-width-1-4">
                             <ul class="uk-nav uk-nav-default">
                                 <li class="uk-active uk-text-large"><a href="#"> Tops </a></li>
-                                <li class="uk-text-large" ><a href="#"> T-shirts </a></li>
-                                <li class="uk-text-large"><a href="#"> Blouses </a></li>
+                                <li class="uk-text-large" ><a href="/america/clothing/tshirts"> T-shirts </a></li>
+                                <li class="uk-text-large"><a href="/america/clothing/blouses"> Blouses </a></li>
                             </ul>
                         </div>
                     </SideNavContainer>
@@ -77,6 +86,7 @@ class ShoppingPage extends Component {
                     <BannerImageShape src={ cover_image_sunny_blackgirl } alt="banner image for this page"/>
 
                     <ItemGridContainer>
+                        <PageText> Tops </PageText>
                         <ImageGrid grid_images={this.state.temp_images} side_margins={0} top_margins={0} img_height={25} width={80}/>
                     </ItemGridContainer>
                 </PageContainer>
