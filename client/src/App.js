@@ -19,7 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LocationImagesContainer} />
             <Route exact path="/america" component={HomePage} />
-            <Route exact path="/america/clothing/tshirts" component={ShoppingPage} />
+            <Route exact path="/america/:category" component={ShoppingPage} />
           </Switch>
 
         </Router>

@@ -117,6 +117,7 @@ class HomePage extends Component {
                 </HeaderContainer>
                 
                 <ImageGrid 
+                    isSelectable={false}
                     grid_images={this.state.images} 
                     side_margins={5} 
                     top_margins={5} 

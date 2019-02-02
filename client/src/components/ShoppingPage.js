@@ -61,24 +61,35 @@ let PageText = styled.h1`
 
 //                          Add shopping cart Icon !!!!!           <<<<--------------------------------
 
+
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
 class ShoppingPage extends Component {
     state = {
-        temp_images: [insta_1, insta_2, insta_3, insta_1]
+        temp_images: [insta_1, insta_2, insta_3, insta_1],
+        isAdminState: false,
+    }
+
+    toggleAdminState = () => {
+        console.log("adminState is: " + this.state.isAdminState)
+        this.setState({isAdminState: !this.state.isAdminState})
     }
     render() {
+
+        // Functions 
+
+
         return (
             <div>
                 {/* Nav Bar */}
-                <NavBar/>
+                <NavBar toggleAdminState = {this.toggleAdminState} />
                 
                 <PageContainer>
                     <SideNavContainer>
                         <div class=" uk-width-1-4">
                             <ul class="uk-nav uk-nav-default">
                                 <li class="uk-active uk-text-large"><a href="#"> Tops </a></li>
-                                <li class="uk-text-large" ><a href="/america/clothing/tshirts"> T-shirts </a></li>
-                                <li class="uk-text-large"><a href="/america/clothing/blouses"> Blouses </a></li>
+                                <li class="uk-text-large" ><a href="/america/tshirts"> T-shirts </a></li>
+                                <li class="uk-text-large"><a href="/america/blouses"> Blouses </a></li>
                             </ul>
                         </div>
                     </SideNavContainer>
@@ -87,7 +98,17 @@ class ShoppingPage extends Component {
 
                     <ItemGridContainer>
                         <PageText> Tops </PageText>
-                        <ImageGrid grid_images={this.state.temp_images} side_margins={0} top_margins={0} img_height={25} width={80}/>
+
+
+
+
+
+                        <ImageGrid isSelectable={true} grid_images={this.state.temp_images} side_margins={0} top_margins={0} img_height={25} width={80}/>
+
+
+
+
+
                     </ItemGridContainer>
                 </PageContainer>
                 

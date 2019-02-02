@@ -48,10 +48,10 @@ class NavBar extends Component {
                                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
                                                     <li class="uk-nav-header"> Tops </li>
-                                                    <li> <a href="/america/clothing/tshirts"> T-shirts </a></li>
+                                                    <li> <a href="/america/tshirts"> T-shirts </a></li>
                                             
             
-                                                    <li> <a href="/america/clothing/blouses"> Blouses </a></li>
+                                                    <li> <a href="/america/blouses"> Blouses </a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -77,7 +77,7 @@ class NavBar extends Component {
                             </ul>
 
                         </div>
-
+                        <button onClick={this.props.toggleAdminState}> I have been Rendered </button>
                     </nav>
                 </div>
             </div>
