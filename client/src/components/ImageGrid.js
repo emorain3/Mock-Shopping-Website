@@ -15,7 +15,7 @@ let ImageContainer = styled.div`
     background-color: ivory;
 `
 let ImageStyled = styled.img`
-    margin: 3vw 1.25vw;
+    margin: 1vw 1.25vw;
     height: ${({ img_height }) => img_height + 'vw'};
     box-shadow: 1px 1px 1px grey;
 `
@@ -24,43 +24,76 @@ let CardStyled = styled.div`
     padding: 30px 10px;
 `
 
+let EditButtonsContainer = styled.div`
+    visibility: ${({ visibility }) => visibility};
+`
+
+
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
 class ImageGrid extends Component {
     state = {
         images: [],
+        visibility: "hidden",
     }
 
     setImageType = (props) => {
-        console.log("setImage's props: " + props.isSelectable)
-        if(!props.isSelectable) {
+        console.log("visibility initially: " + this.state.visibility)
+        if(props.imageType === "1") {
             this.setState({images : this.props.grid_images.map( (image) => {
                     return(<ImageStyled src={image} alt=" image of something" img_height={this.props.img_height} /> )
                 })
             })
         }
-        this.setState({images : this.props.grid_images.map( (image) => {
-            return(
-                    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-                        <div>
-                            <div style={{padding: '10px 5px'}} class="uk-card uk-card-large uk-card-hover uk-card-body">
-                                <img src={image} alt=" image of something"/>
+        else if(props.imageType === "2") {
+
+            this.setState({images : this.props.grid_images.map( (image) => {
+                return(
+                    <div style={{marginBottom: '2vw', marginTop:"0vw"}} class="uk-grid-match" uk-grid>
+                        <div style={{height: `${this.props.img_height}`}}>
+                            <div style={{padding: '10px 5px'}} class="uk-card uk-card-hover uk-card-body">
+                                {/*  Edit Buttons */}
+                                <EditButtonsContainer class="edit_button_container" visibility={this.state.visibility} >
+                                    <a href="admin/{{_id}}">
+                                        <i style={{color:"grey", marginLeft:"3vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
+                                    </a>
+                                    <a href="admin/{{_id}}">
+                                        <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
+                                    </a>
+                                </EditButtonsContainer>
+                                {/* Image */}
+                                <a href="item/{{_id}}">
+                                    <ImageStyled src={image} alt=" image of something" img_height={this.props.img_height} />
+                                </a>
                                 <p> Item that you want</p>
                                 <p> $ 100 </p>
+
                             </div>
                         </div>
                     </div>
                 )
-            })
-        })
+            }) })
+        }
     }
 
     
 
     componentDidMount () {
         this.setImageType(this.props)
+        this.setState({visibility: this.props.visibility})
     }
-
+    
+    componentWillReceiveProps(nextProps) {
+        // You don't have to do this check first, but it can help prevent an unneeded render
+        if (nextProps.visibility !== this.state.visibility) {
+            this.setState({ visibility: nextProps.visibility }, () => {
+                this.setImageType(this.props)
+            });
+        }
+    }
+    
+    
     render() {
+        console.log("icon visibility updated to: " + this.state.visibility)
         
         return (
             <ImageContainer 

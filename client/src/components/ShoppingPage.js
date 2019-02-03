@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 import NavBar from './NavBar'
 import ImageGrid from './ImageGrid'
+import ItemForm from './ItemForm'
 
 import cover_image_sunny_blackgirl from '../images/cover_image_sunny_blackgirl.jpg';
 import insta_1 from '../images/insta_asiangirl.jpg';
@@ -65,14 +67,34 @@ let PageText = styled.h1`
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
 class ShoppingPage extends Component {
     state = {
-        temp_images: [insta_1, insta_2, insta_3, insta_1],
+        temp_images: [insta_1, insta_2, insta_3, insta_1, insta_2, insta_3],
         isAdminState: false,
+        visibility: "hidden",
     }
 
     toggleAdminState = () => {
-        console.log("adminState is: " + this.state.isAdminState)
-        this.setState({isAdminState: !this.state.isAdminState})
+        this.setState({isAdminState: !this.state.isAdminState}, () => {    
+            if(this.state.isAdminState) {
+                this.setState({visibility: "visible"})
+            } else {this.setState({visibility: "hidden"})}
+            console.log("adminState is: " + this.state.isAdminState)
+        })
+
     }
+
+
+
+    componentDidMount () {
+        axios.get(`/api/america/:category`).then((res) => {
+            console.log(res.items)
+            // this.setState({ temp_images: res.images })
+            
+        })
+    }
+
+
+
+
     render() {
 
         // Functions 
@@ -84,6 +106,8 @@ class ShoppingPage extends Component {
                 <NavBar toggleAdminState = {this.toggleAdminState} />
                 
                 <PageContainer>
+
+                    {/* Side Nav */}
                     <SideNavContainer>
                         <div class=" uk-width-1-4">
                             <ul class="uk-nav uk-nav-default">
@@ -92,24 +116,37 @@ class ShoppingPage extends Component {
                                 <li class="uk-text-large"><a href="/america/blouses"> Blouses </a></li>
                             </ul>
                         </div>
+
+                        <ItemForm/>
                     </SideNavContainer>
 
+
+                    {/* Image Banner */}
                     <BannerImageShape src={ cover_image_sunny_blackgirl } alt="banner image for this page"/>
 
+
+                    {/* Item Grid */}
                     <ItemGridContainer>
+
+
+
                         <PageText> Tops </PageText>
 
 
-
-
-
-                        <ImageGrid isSelectable={true} grid_images={this.state.temp_images} side_margins={0} top_margins={0} img_height={25} width={80}/>
-
-
-
+                        <ImageGrid 
+                            visibility={this.state.visibility}
+                            imageType={"2"} 
+                            grid_images={this.state.temp_images} 
+                            side_margins={0} 
+                            top_margins={1} 
+                            img_height={20} 
+                            width={80}/>
 
 
                     </ItemGridContainer>
+
+
+
                 </PageContainer>
                 
             </div>

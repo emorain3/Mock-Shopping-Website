@@ -77,7 +77,11 @@ class NavBar extends Component {
                             </ul>
 
                         </div>
-                        <button onClick={this.props.toggleAdminState}> I have been Rendered </button>
+                        
+                            <div class="uk-button-group">
+                                <button onClick={this.props.toggleAdminState} class="uk-button uk-button-danger"> Admin View?  </button>
+                            </div>
+                        
                     </nav>
                 </div>
             </div>
