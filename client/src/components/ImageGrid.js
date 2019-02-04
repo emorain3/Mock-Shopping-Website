@@ -37,42 +37,17 @@ class ImageGrid extends Component {
     }
 
     setImageType = (props) => {
-        console.log("visibility initially: " + this.state.visibility)
+        // console.log("visibility initially: " + this.state.visibility)
         if(props.imageType === "1") {
-            this.setState({images : this.props.grid_images.map( (image) => {
-                    return(<ImageStyled src={image} alt=" image of something" img_height={this.props.img_height} /> )
-                })
-            })
-        }
-        else if(props.imageType === "2") {
-
-            this.setState({images : this.props.grid_images.map( (image) => {
-                return(
-                    <div style={{marginBottom: '2vw', marginTop:"0vw"}} class="uk-grid-match" uk-grid>
-                        <div style={{height: `${this.props.img_height}`}}>
-                            <div style={{padding: '10px 5px'}} class="uk-card uk-card-hover uk-card-body">
-                                {/*  Edit Buttons */}
-                                <EditButtonsContainer class="edit_button_container" visibility={this.state.visibility} >
-                                    <a href="admin/{{_id}}">
-                                        <i style={{color:"grey", marginLeft:"3vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
-                                    </a>
-                                    <a href="admin/{{_id}}">
-                                        <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
-                                    </a>
-                                </EditButtonsContainer>
-                                {/* Image */}
-                                <a href="item/{{_id}}">
-                                    <ImageStyled src={image} alt=" image of something" img_height={this.props.img_height} />
-                                </a>
-                                <p> Item that you want</p>
-                                <p> $ 100 </p>
-
-                            </div>
-                        </div>
-                    </div>
-                )
+            this.setState({images : props.images.map( (image) => {
+                return(<ImageStyled src={image} alt=" image of something" img_height={this.props.img_height} /> )
             }) })
         }
+        // else if(props.imageType === "2" && props.images.length !== 0) {
+        
+        //     console.log("image received IN CHILD ---> : " + JSON.stringify(props.images))
+            
+        //     }
     }
 
     
@@ -89,11 +64,16 @@ class ImageGrid extends Component {
                 this.setImageType(this.props)
             });
         }
+        if (nextProps.images !== this.state.images) {
+            this.setState({ images: nextProps.images }, () => {
+                this.setImageType(this.props)
+            });
+        }
     }
     
     
     render() {
-        console.log("icon visibility updated to: " + this.state.visibility)
+        // console.log("icon visibility updated to: " + this.state.visibility)
         
         return (
             <ImageContainer 

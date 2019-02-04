@@ -118,7 +118,7 @@ class HomePage extends Component {
                 
                 <ImageGrid 
                     imageType={"1"}
-                    grid_images={this.state.images} 
+                    images={this.state.images} 
                     side_margins={5} 
                     top_margins={5} 
                     img_height={30} />

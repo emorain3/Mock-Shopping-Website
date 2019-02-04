@@ -6,9 +6,9 @@ const Review = require('../models/Review');
 
 let initialHomeItems = [
     {
-        name: "Chibi Cloud Pillow",
+        name: "Button Back Balloon Sleeve Top",
         description: "The softest and the cutest cloud you'll ever lay on.",
-        image_url: "https://image.dhgate.com/0x0/f2/albu/g2/M00/EB/57/rBVaGloeuZGAR5ZJAABAvrBKisw315.jpg",
+        image_url: "/images/yellow_shirt.jpg",
         category: "home_accessories",
         price: 25,
         reviews: []
@@ -16,21 +16,21 @@ let initialHomeItems = [
     {
         name: "Orange You Special",
         description: "80% Cotton, 15% Cotton-blend, 5% Acryllic. Orange Scented.",
-        image_url: "http://www.thetbbs.com/upload/2018/09/24/the-25-best-cute-pillows-ideas-on-pinterest-kawaii-cute-food-pillows-s-5da68f0d802fd9bc.jpg",
+        image_url: "/images/green_shirt.jpg",
         category: "home_accessories",
         price: 15,
     },
     {
-        name: "Sunny Side Up Pillow",
+        name: "Wrap Surplice Neck Solid Blouse",
         description: "It's a Pillow. It's kinda cute too.",
-        image_url: "http://tightsshop.co/wp-content/uploads/2018/11/cute-food-pillows-what-cute-food-pillow-should-you-buy-cute-pillows-pillows-and-food-pillows-cute-food-pillows-for-sale.jpg",
+        image_url: "/images/blue_shirt.jpg",
         category: "home_accessories",
         price: 15,
     },
     {
-        name: "Kitty Plushy",
+        name: "Zip Back Puff Sleeve Form Fitted Wrap Sweetheart Top",
         description: "It's a plushy, it's a pet.",
-        image_url: "https://ae01.alicdn.com/kf/HTB1W1Jsy1OSBuNjy0Fdq6zDnVXaG/sumikko-gurashi-cat-plush-soft-toy-cute-pillow-blanket-doll-birthday-gift-japanese-character-kawaii-plushies.jpg_640x640.jpg",
+        image_url: "/images/black_shirt.jpg",
         category: "home_accessories",
         price: 25,
     },

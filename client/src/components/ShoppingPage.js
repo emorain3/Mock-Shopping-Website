@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
+
 
 import NavBar from './NavBar'
 import ImageGrid from './ImageGrid'
 import ItemForm from './ItemForm'
 
 import cover_image_sunny_blackgirl from '../images/cover_image_sunny_blackgirl.jpg';
-import insta_1 from '../images/insta_asiangirl.jpg';
-import insta_2 from '../images/insta_blackgirl_1.jpg';
-import insta_3 from '../images/insta_3.jpg';
+
 
 
 
@@ -56,18 +56,27 @@ let ItemGridContainer = styled.div`
 
 let PageText = styled.h1`   
     margin-top: 2vw;
-    margin-bottom: -1vw;
+    margin-bottom: 1vw;
     margin-left: 2vw;
     font-family: 'Titillium Web', sans-serif;
 `
 
+let EditButtonsContainer = styled.div`
+    visibility: ${({ visibility }) => visibility};
+`
+
+let ImageStyled = styled.img`
+    margin: 1vw 1.25vw;
+    height: 20vw;
+    box-shadow: 1px 1px 1px grey;
+`
 //                          Add shopping cart Icon !!!!!           <<<<--------------------------------
 
 
 /////////////////////////// COMPONENT DEFINITION /////////////////////////
 class ShoppingPage extends Component {
     state = {
-        temp_images: [insta_1, insta_2, insta_3, insta_1, insta_2, insta_3],
+        image_objects: [{}],
         isAdminState: false,
         visibility: "hidden",
     }
@@ -75,31 +84,73 @@ class ShoppingPage extends Component {
     toggleAdminState = () => {
         this.setState({isAdminState: !this.state.isAdminState}, () => {    
             if(this.state.isAdminState) {
-                this.setState({visibility: "visible"})
-            } else {this.setState({visibility: "hidden"})}
+                this.setState({visibility: "visible"}, () => {
+                    console.log("visibility set to: " + this.state.visibility)
+                    this.updateImages()
+                })
+            } else {this.setState({visibility: "hidden"}, () => {
+                console.log("visibility set to: " + this.state.visibility)
+                this.updateImages()
+                }) 
+            }
             console.log("adminState is: " + this.state.isAdminState)
         })
 
     }
 
-
-
-    componentDidMount () {
+    updateImages = () => {
         axios.get(`/api/america/:category`).then((res) => {
-            console.log(res.items)
-            // this.setState({ temp_images: res.images })
+            // console.log("THE DATA I WANT TO PARSE --> " + res.data)
+            this.setState({ image_objects: res.data.map(image_object => {
+                // console.log("image_object.name: " + JSON.stringify(image_object))
+                    return(
+                        <div key={image_object.image_url} style={{marginBottom: '2vw', marginTop:"0vw"}} class="uk-grid-match" uk-grid>
+                            <div style={{height: "30vw"}}>
+                                <div style={{padding: '10px 5px'}} class="uk-card uk-card-hover uk-card-body">
+                                    
+                                    {/*  Edit Buttons */}
+                                    <EditButtonsContainer class="edit_button_container" visibility={this.state.visibility} >
+                                        <a href="/admin/{{_id}}">
+                                            <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
+                                        </a>
+                                        <a href={`http://localhost:3001/api/america/admin/delete/${image_object._id}`}> 
+                                            <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
+                                        </a> 
+                                        
+                                    </EditButtonsContainer>
+                                    
+                                    
+                                    {/* Image */}
+                                    <a href="item/{{_id}}">
+                                        <ImageStyled src={image_object.image_url} alt=" image of something" />
+                                    </a>
+                                    <p> {image_object.name}</p>
+                                    <p> ${image_object.price} </p>
+    
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }) })
             
         })
+        
     }
 
+    componentDidMount () {
+        this.updateImages()
+    }
 
+    componentWillReceiveProps(nextProps) {
+        this.updateImages()
+    }
 
 
     render() {
 
         // Functions 
 
-
+        // console.log("image_objects IN PARENT are: " + JSON.stringify(this.state.image_objects))
         return (
             <div>
                 {/* Nav Bar */}
@@ -113,11 +164,11 @@ class ShoppingPage extends Component {
                             <ul class="uk-nav uk-nav-default">
                                 <li class="uk-active uk-text-large"><a href="#"> Tops </a></li>
                                 <li class="uk-text-large" ><a href="/america/tshirts"> T-shirts </a></li>
-                                <li class="uk-text-large"><a href="/america/blouses"> Blouses </a></li>
+                                <li class="uk-text-large" ><a href="/america/blouses"> Blouses </a></li>
                             </ul>
                         </div>
 
-                        <ItemForm/>
+                        <ItemForm updateImages={this.updateImages}/>
                     </SideNavContainer>
 
 
@@ -136,7 +187,7 @@ class ShoppingPage extends Component {
                         <ImageGrid 
                             visibility={this.state.visibility}
                             imageType={"2"} 
-                            grid_images={this.state.temp_images} 
+                            images={this.state.image_objects} 
                             side_margins={0} 
                             top_margins={1} 
                             img_height={20} 

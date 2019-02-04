@@ -11,8 +11,8 @@ router.get('/', itemController.index);
 
 
 //  AdDMIN Routes
-router.put('/america/admin/', itemController.create);
+router.post('/america/admin/', itemController.create);
 router.post('/america/admin/:id', itemController.update);
-router.delete('/america/admin/:id', itemController.delete);
+router.get('/america/admin/delete/:id', itemController.delete);
 
 module.exports = router;

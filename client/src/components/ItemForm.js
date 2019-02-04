@@ -19,7 +19,7 @@ class ItemForm extends Component {
         
         return (
             <FormStyled>
-                <form action={`api/america/admin/"${this.props.itemId}?_method=PUT`} method="post">
+                <form action={`http://localhost:3001/api/america/admin`} method="post">
                         <div class="field">
                             <label class="label" for="name">Name: </label>
                             <input class="input" name="name" id="i_name" placeholder="What is the name of this item?"/>
@@ -46,7 +46,7 @@ class ItemForm extends Component {
                         </div>
 
                         <div class="field">
-                            <button class="button is-link">Submit </button>
+                            <button class="button is-link" onClick={this.props.updateImages}>Submit </button>
                         </div>
                     </form>
             </FormStyled>

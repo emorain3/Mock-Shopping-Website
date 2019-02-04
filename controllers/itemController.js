@@ -16,7 +16,10 @@ const itemController = {
             image_url: req.body.image_url, 
             category: req.body.category, // Want to make into an enum
             price: req.body.price, 
-        }).then(item => res.redirect('/'))
+        }).then(() => Item.find({}).then(items => {
+            // console.log("These are the items in my database: " + items)
+            res.send(items);
+        }))
     },
 
     edit: (req, res) => {
@@ -36,7 +39,10 @@ const itemController = {
     delete: (req, res) => {
         let id = req.params.id;
         console.log("Deleting: " + id);
-        Item.findByIdAndDelete(id).then(item => res.redirect('/'))
+        Item.findByIdAndDelete(id).then(items => {
+            console.log("HEY YOU! items found: " + items)
+            res.send(items)
+        })
     },
 }
 
