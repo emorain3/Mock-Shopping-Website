@@ -37,6 +37,7 @@ class NavBar extends Component {
                         <div class="uk-navbar-left uk-background-secondary" style={navBkgndClr}>
                             
                             <Link to={"/america"}> <Logo src={logo} alt="Brand Logo" /> </Link>
+                            <Link to={"/america/tshirts"}> T-shirts </Link>
 
                             <ul class="uk-navbar-nav">
                                 
@@ -48,7 +49,7 @@ class NavBar extends Component {
                                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
                                                     <li class="uk-nav-header"> Tops </li>
-                                                    <li> <a href="/america/tshirts"> T-shirts </a></li>
+                                                    <li> <Link to={"/america/tshirts"}> T-shirts </Link> </li>
                                             
             
                                                     <li> <a href="/america/blouses"> Blouses </a></li>
