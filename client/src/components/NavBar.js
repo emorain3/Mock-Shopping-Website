@@ -52,7 +52,7 @@ class NavBar extends Component {
                                                     <li> <Link to={"/america/tshirts"}> T-shirts </Link> </li>
                                             
             
-                                                    <li> <a href="/america/blouses"> Blouses </a></li>
+                                                    <li> <Link to={"/america/blouses"}> Blouses </Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -66,10 +66,10 @@ class NavBar extends Component {
                                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
                                                     <li class="uk-nav-header">Office Essentials</li>
-                                                    <li><a href="/america/office"> Notebooks and Stationery </a></li>
+                                                    <li> <Link to={"/america/office"}> Notebooks and Stationery </Link></li>
                                             
                                                     <li class="uk-nav-divider"></li>
-                                                    <li class="uk-nav-header"><a href="/america/purses"> Purses </a></li>
+                                                    <li class="uk-nav-header"><Link to={"/america/purses"}> Purses </Link></li>
                                                 </ul>
                                             </div>
                                         </div>
