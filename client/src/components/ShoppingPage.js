@@ -98,6 +98,11 @@ class ShoppingPage extends Component {
 
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.put(`/api/america/admin`)
+    }
+
     updateImages = () => {
         axios.get(`/api/america/:category`).then((res) => {
             // console.log("THE DATA I WANT TO PARSE --> " + res.data)
@@ -168,7 +173,7 @@ class ShoppingPage extends Component {
                             </ul>
                         </div>
 
-                        <ItemForm updateImages={this.updateImages}/>
+                        <ItemForm updateImages={this.updateImages} handleSubmit={this.handleSubmit}/>
                     </SideNavContainer>
 
 
