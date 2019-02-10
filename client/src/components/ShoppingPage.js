@@ -110,20 +110,20 @@ class ShoppingPage extends Component {
                                     
                                     {/*  Edit Buttons */}
                                     <EditButtonsContainer class="edit_button_container" visibility={this.state.visibility} >
-                                        <a href="/admin/{{_id}}">
+                                        <Link to={"/admin/{{_id}}"}>
                                             <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
-                                        </a>
-                                        <a href={`http://localhost:3001/api/america/admin/delete/${image_object._id}`}> 
+                                        </Link>
+                                        <Link to={`http://localhost:3001/api/america/admin/delete/${image_object._id}`}> 
                                             <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
-                                        </a> 
+                                        </Link> 
                                         
                                     </EditButtonsContainer>
                                     
                                     
                                     {/* Image */}
-                                    <a href="item/{{_id}}">
+                                    <Link to={"item/{{_id}}"}>
                                         <ImageStyled src={image_object.image_url} alt=" image of something" />
-                                    </a>
+                                    </Link>
                                     <p> {image_object.name}</p>
                                     <p> ${image_object.price} </p>
     
