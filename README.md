@@ -1,5 +1,7 @@
 # Mock-Shopping-Website-WDI-Project3
 [Linked here: https://mock-shopping-site-emorain.herokuapp.com/](https://mock-shopping-site-emorain.herokuapp.com/)
+*"Is it mobile friendly too?"*
+You bet!
 
 ## Technologies Used
 - [Vectr](http://vectr.com) - for wireframing and pre-planning.
