@@ -1,6 +1,6 @@
 # Mock-Shopping-Website-WDI-Project3
 [Linked here: https://mock-shopping-site-emorain.herokuapp.com/](https://mock-shopping-site-emorain.herokuapp.com/)
-*"Is it mobile friendly too?"*
+_"Is it mobile friendly too?"_
 You bet!
 
 ## Technologies Used
