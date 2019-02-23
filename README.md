@@ -11,7 +11,7 @@ You bet!
 - [Mongoose and MongoDB](https://mongoosejs.com/) - Database management
 - [React.js](https://reactjs.org/) - Client/ Front-end management.
 - [Heroku](http://heroku.com) for deployment
-- [Bulma](https://bulma.io/) for styling 
+- [UIkit](https://getuikit.com/) for styling 
 
 ### Wireframes: 
 ![Landing Page Wireframe](/wireframes/shop_homepage.png)
