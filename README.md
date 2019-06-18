@@ -1,5 +1,5 @@
 # Mock-Shopping-Website-WDI-Project3
-[Linked here: https://mock-shopping-site-emorain.herokuapp.com/](https://mock-shopping-site-emorain.herokuapp.com/)
+Linked here: [https://mock-shopping-site-emorain.herokuapp.com/](https://mock-shopping-site-emorain.herokuapp.com/)
 _"Is it mobile friendly too?"_
 You bet!
 
