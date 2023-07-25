@@ -4,11 +4,10 @@
   "description": "mock-up of a clothing e-commerce website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",     
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",     
-    "test": "echo \"Error: no test specified\" && exit 1",     
-    "postinstall": "cd client && npm install && npm run build" 
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,16 +18,15 @@
   "bugs": {
     "url": "https://github.com/emorain3/Mock-Shopping-Website-WDI-Project3/issues"
   },
-  "homepage": "https://github.com/emorain3/Mock-Shopping-Website-WDI-Project3#readme",
+  "homepage": "https://emorain3.github.io/Mock-Shopping-Website-WDI-Project3",
   "dependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^8.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mongoose": "^5.7.5",
-    "nodemon": "^1.18.9"
+    "nodemon": "^3.0.1"
   },
-
-  "engines": {    
+  "engines": {
     "node": "10.13.0"
   }
 }
